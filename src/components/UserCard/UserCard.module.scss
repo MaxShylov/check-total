@@ -1,0 +1,29 @@
+.wrap {
+  position: relative;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #3492ff2e;
+}
+
+.deleteWrap {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.products {
+  > * {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

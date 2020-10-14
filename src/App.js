@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import 'antd/dist/antd.css'
+import Layout from 'antd/lib/layout'
+import Title from 'antd/lib/typography/Title'
+
+import { Info, Users } from 'components'
+
+import styles from './App.module.scss'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Layout className={styles.wrap}>
+      <Title className={styles.title}>Check total</Title>
+
+      <div className={styles.info}>
+        <Info />
+      </div>
+
+      <Users />
+    </Layout>
+  )
 }
 
-export default App;
+export default App

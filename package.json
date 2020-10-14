@@ -1,14 +1,33 @@
 {
-  "name": "check",
+  "name": "check-counting",
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2"
+  },
   "dependencies": {
+    "@ant-design/icons": "^4.2.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "antd": "^4.7.0",
+    "axios": "^0.20.0",
+    "lodash": "^4.17.20",
+    "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-redux": "^7.2.1",
+    "react-scripts": "3.4.3",
+    "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^1.1.3",
+    "reselect": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,7 +42,8 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "ie 10"
     ],
     "development": [
       "last 1 chrome version",

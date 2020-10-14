@@ -21,7 +21,7 @@ export const Info = () => {
   const difference = totalAmount - menuItemsTotal
 
   const handleChangeTotal = useCallback(
-    value => dispatch(infoActions.setTotal(value)),
+    value => dispatch(infoActions.setTotalAmount(value)),
     [dispatch],
   )
 

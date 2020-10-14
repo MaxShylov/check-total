@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Input from 'antd/lib/input'
 
 import {
@@ -10,12 +10,14 @@ import {
   InputPrice,
 } from 'components/controls'
 import { menuItemsActions } from 'services/store/menuItems/actions'
+import { getWithTitle } from 'services/store/settings/selectors'
 
 import styles from './MenuItem.module.scss'
 
 export const MenuItem = ({ id, name, amount, divideBy, price, userId }) => {
   const dispatch = useDispatch()
   const menuItemId = id
+  const withTitle = useSelector(getWithTitle)
 
   const handleChangeName = useCallback(
     e => {
@@ -41,11 +43,13 @@ export const MenuItem = ({ id, name, amount, divideBy, price, userId }) => {
 
   return (
     <div className={styles.wrap}>
-      <div className={styles.title}>
-        <div className={styles.label}>Title</div>
-        <Input value={name} onChange={handleChangeName} />
-      </div>
-      <div className={styles.details}>
+      {withTitle && (
+        <div className={styles.title}>
+          <div className={styles.label}>Title</div>
+          <Input value={name} onChange={handleChangeName} />
+        </div>
+      )}
+      <div className={`${styles.details} ${!withTitle && styles.detailsFull}`}>
         <div className={styles.price}>
           <div className={styles.label}>Price</div>
           <InputPrice value={price} onChange={handleChangePrice} />
